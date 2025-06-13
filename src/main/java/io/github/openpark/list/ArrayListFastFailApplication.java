@@ -10,6 +10,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * ArrayList fail-fast 机制
+ * {@link ArrayList}
  *
  * @author anthony
  * @version 2025/6/13

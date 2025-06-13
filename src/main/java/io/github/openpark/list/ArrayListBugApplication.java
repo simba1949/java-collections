@@ -5,11 +5,13 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
+ * {@link ArrayList}
+ *
  * @author anthony
  * @version 2025/6/12
  * @since 2025/6/12 10:37
  */
-public class ArrayListApplication {
+public class ArrayListBugApplication {
 	public static void main(String[] args) {
 		bug62606525();
 	}
