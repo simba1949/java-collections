@@ -23,14 +23,6 @@ public class RedBlackTree<E extends Comparable<E>> {
 
 	/**
 	 * 添加节点
-	 * 添加第一个节点时：该节点为根节点，颜色为黑色
-	 * 添加第二个节点时：
-	 * 1. 第一种情况是在根节点左侧添加节点时，该节点为左子节点，颜色为红色：无后续操作
-	 * 2. 第一种情况是在根节点右侧添加节点时，该节点为右子节点，颜色为红色：需要左旋
-	 * 添加第三个节点时：
-	 * 1. 第一种情况是在根节点的左子树的左侧添加节点时，颜色为红色：需要右旋，需要颜色翻转
-	 * 2. 第二种情况是在根节点的左子树的右侧添加节点时，颜色为红色：需要左旋，需要右旋，需要颜色翻转
-	 * 3. 第三种情况是在根节点的右侧添加节点时，颜色为红色：无后续操作
 	 *
 	 * @param node 节点
 	 * @param e    节点值
@@ -76,6 +68,8 @@ public class RedBlackTree<E extends Comparable<E>> {
 	 * T2 T3            T1  T2
 	 */
 	private Node leftRotate(Node node) {
+		if (node == null || node.right == null) return node;
+
 		Node x = node.right;
 
 		node.right = x.left;
@@ -95,6 +89,8 @@ public class RedBlackTree<E extends Comparable<E>> {
 	 * T1 T2                   T3  T4
 	 */
 	private Node rightRotate(Node node) {
+		if (node == null || node.left == null) return node;
+
 		Node x = node.left;
 
 		node.left = x.right;
